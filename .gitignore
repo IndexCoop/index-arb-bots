@@ -1,0 +1,21 @@
+# Foundry
+cache/
+out/
+broadcast/
+
+# JS
+node_modules/
+
+#Hardhat files
+cache_hardhat/
+artifacts/
+
+#Hardhat plugin files
+typechain-types/
+typechain/
+dist/
+deployments/
+
+.env
+/**/*.icloud
+.DS_Store

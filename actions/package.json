@@ -1,0 +1,14 @@
+{
+    "name": "actions",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "@indexcoop/flash-mint-sdk": "^1.6.0",
+        "@tenderly/actions": "^0.1.0"
+    },
+    "private": true
+}

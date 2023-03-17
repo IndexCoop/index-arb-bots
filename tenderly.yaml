@@ -1,0 +1,62 @@
+account_id: 5b57c767-12c0-4a61-a9f7-06ae8fd737ca
+actions:
+  edward-index/project:
+    runtime: v2
+    sources: actions
+    specs:
+      dsethMint:
+        description: Arb bot for dsETH
+        function: dseth:mint
+        trigger:
+          type: block
+          block:
+            network:
+              - 1
+            blocks: 100
+      dsethRedeem:
+        description: Arb bot for dsETH
+        function: dseth:redeem
+        trigger:
+          type: block
+          block:
+            network:
+              - 1
+            blocks: 100
+      gtcethMint:
+        description: Arb bot for gtcETH
+        function: gtceth:mint
+        trigger:
+          type: block
+          block:
+            network:
+              - 1
+            blocks: 100
+      gtcethRedeem:
+        description: Arb bot for gtcETH
+        function: gtceth:redeem
+        trigger:
+          type: block
+          block:
+            network:
+              - 1
+            blocks: 100
+exports:
+  hardhat:
+    chain_config:
+      berlin_block: 0
+      byzantium_block: 0
+      constantinople_block: 0
+      eip150_block: 0
+      eip150_hash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      eip155_block: 0
+      eip158_block: 0
+      homestead_block: 0
+      istanbul_block: 0
+      london_block: 0
+      petersburg_block: 0
+    forked_network: Mainnet
+    project_slug: edward-index/project
+    protocol: ""
+    rpc_address: 127.0.0.1:8545
+project_slug: project
+provider: Hardhat
