@@ -8,6 +8,7 @@ const indexToken = {
   symbol: "gtcETH",
   decimals: 18,
   address: "0x36c833Eed0D376f75D1ff9dFDeE260191336065e",
+  fee: 500,
 };
 
 const payload: ArbPayload = {

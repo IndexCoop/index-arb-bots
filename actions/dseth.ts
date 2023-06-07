@@ -8,6 +8,7 @@ const indexToken = {
   symbol: "dsETH",
   decimals: 18,
   address: "0x341c05c0E9b33C0E38d64de76516b2Ce970bB3BE",
+  fee: 100,
 };
 
 const payload: ArbPayload = {

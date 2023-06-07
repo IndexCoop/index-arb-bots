@@ -21,9 +21,6 @@ import {
   getSellSetTokenCalldata,
 } from "./calldata";
 
-const fee = 500;
-
-const dsEthAddress = "0x341c05c0E9b33C0E38d64de76516b2Ce970bB3BE";
 const eiAddress = "0x9d648E5564B794B918d99C84B0fbf4b0bf36ce45";
 const lendingPoolAddress = "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9";
 const uniRouterAddress = "0xE592427A0AEce92De3Edee1F18E0157C05861564";
@@ -198,17 +195,17 @@ export const tryBuyAndRedeem = async (
     const { componentQuotes, indexTokenAmount, inputOutputTokenAmount } = quote;
     try {
       const { exchangeIssuanceCalldata } = await getRedeemCalldata(
-        dsEthAddress,
+        inputToken.address, // SetToken
         indexTokenAmount,
         componentQuotes,
         provider
       );
       const tradeCallData = getBuySetTokenCalldata(
         arbitrageBot.address,
-        dsEthAddress,
+        inputToken.address, // SetToken
         indexTokenAmount,
         inputOutputTokenAmount,
-        fee,
+        inputToken.fee,
         provider
       );
       const profit = await calculateProfit(
@@ -279,7 +276,7 @@ const tryIssueAndSell = async (
     const { componentQuotes, indexTokenAmount, inputOutputTokenAmount } = quote;
     try {
       const { exchangeIssuanceCalldata } = await getIssueCalldata(
-        dsEthAddress,
+        outputToken.address, // SetToken
         indexTokenAmount,
         componentQuotes,
         inputOutputTokenAmount,
@@ -287,10 +284,10 @@ const tryIssueAndSell = async (
       );
       const tradeCallData = getSellSetTokenCalldata(
         arbitrageBot.address,
-        dsEthAddress,
+        outputToken.address, // SetToken
         indexTokenAmount,
         inputOutputTokenAmount,
-        fee,
+        outputToken.fee,
         provider
       );
       const profit = await calculateProfit(
